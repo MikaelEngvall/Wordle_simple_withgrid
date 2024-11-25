@@ -1,0 +1,141 @@
+html,
+body {
+  background: var(--default);
+  text-align: center;
+}
+
+:root {
+  --default: #121213;
+  --empty: #3a3a3c;
+  --wrong: #b59f3b;
+  --right: #538d4e;
+}
+
+#game {
+  display: grid; /* Use grid layout for the game */
+  justify-items: center; /* Centers items horizontally */
+  align-items: start; /* Aligns items to the top */
+  margin-top: 5rem;
+  width: 100%;
+  height: 72vh;
+}
+
+.grid {
+  display: grid;
+  grid-template-rows: repeat(6, auto);
+  grid-template-columns: repeat(5, auto);
+}
+
+.box {
+  width: 60px;
+  height: 60px;
+  border: 2px solid var(--empty);
+  margin: 4px;
+  color: white;
+  text-transform: uppercase;
+  display: grid;
+  place-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.4rem;
+}
+
+.box.empty {
+  background: var(--empty);
+}
+
+.box.wrong {
+  background: var(--wrong);
+}
+
+.box.right {
+  background: var(--right);
+}
+
+.animated {
+  animation: flip 0.5s ease;
+}
+
+@keyframes flip {
+  0% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.title {
+  color: white;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 3rem;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.title-word-clone {
+  position: absolute;
+  left: calc(50% + 75px);
+  transform: rotate(25deg);
+  color: yellow;
+  font-size: 1.2rem;
+}
+
+hr {
+  border-style: solid;
+  border-color: var(--empty);
+  border-width: 1px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.v-separator {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.social-media-link {
+  display: flex;
+  fill: white;
+  width: 25px;
+  height: 25px;
+  margin-right: 0.75rem;
+}
+
+#play-again {
+  display: none; /* Initially hidden */
+  margin: 20px 0; /* Vertical spacing */
+  padding: 10px 20px;
+  background-color: var(--wrong);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+#play-again:hover {
+  background-color: var(--right);
+}
+
+#game-container {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+#button-container {
+  display: grid; /* Use grid to center the button */
+  justify-items: center; /* Horizontally center the button */
+  align-items: center; /* Vertically center the button */
+  margin-top: 20px;
+}
